@@ -4,7 +4,7 @@ import PracticeClock from "./components/PracticeClock";
 function App() {
   return (
     <div>
-      <Clock region="bn-bd" />
+      <Clock region="en-us" />
       <PracticeClock>bn-bd</PracticeClock>
     </div>
   );

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=`, initial-scale=1.0" />
+    <title>This</title>
+  </head>
+  <body>
+    <script>
+      const javaScript = {
+        name: "javaScript",
+        libraries: ["React", "Vue", "Angular"],
+        print: function () {
+          //   let thisSelf = this.name;
+          this.libraries.forEach((library) => {
+            console.log(`${this.name} loves ${library}`);
+          });
+        },
+      };
+
+      javaScript.print();
+    </script>
+  </body>
+</html>

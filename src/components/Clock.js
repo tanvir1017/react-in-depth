@@ -1,12 +1,16 @@
 import React from "react";
+import Button from "./Button";
 
 class Clock extends React.Component {
-  state = { date: new Date() };
+  constructor(props) {
+    super(props);
+    this.state = { date: new Date(), locale: "en-us" };
+  }
   // constructor(props) {
   //   super(props);
   //   this.state = { date: new Date() };
   // }
-  // Whenever component is mounted this function will work from there
+  // Whenever component is mounted this function/Method will work from there
   componentDidMount() {
     this.clearClock = setInterval(() => this.tick(), 1000);
   }
@@ -15,16 +19,26 @@ class Clock extends React.Component {
   componentWillUnmount() {
     clearInterval(this.clearClock);
   }
-
+  handleBnBd = () => {
+    this.setState({
+      locale: "bn-BD",
+    });
+  };
   tick() {
     this.setState({
       date: new Date(),
     });
   }
   render() {
+    console.log("⚠️ Clock component rendered ");
     return (
       <div style={{ textAlign: "center" }}>
-        <h1>{this.state.date.toLocaleTimeString(this.props.region)}</h1>
+        <h1 style={{ display: "inline", marginRight: "20px" }}>
+          {this.state.date.toLocaleTimeString(this.state.locale)}
+        </h1>
+        <Button change={this.handleBnBd} region="bn-BD">
+          bn-BD
+        </Button>
       </div>
     );
   }
